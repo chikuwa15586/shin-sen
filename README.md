@@ -1,36 +1,24 @@
-# 神籤（Shin-Sen）
+# README
 
-## 概要
-本アプリは、ユーザーが1日1回ガチャを引くことで
-「今日の運勢」を振り返ることができるWebアプリケーションです。
+This README would normally document whatever steps are necessary to get the
+application up and running.
 
-未来を占うのではなく、
-その日1日をどう受け止めるかを楽しむことを目的としています。
+Things you may want to cover:
 
-## 制作背景
-おみくじや占いを信じていなくても、「今日は運が良かったのか悪かったのか」
-と後から考えてしまうことがあります。ですので運が良ければ前向きに、悪ければ気を付けようなど
-注意喚起にもなります。
+* Ruby version
 
-そのような感覚を、ガチャという形で気軽に楽しめるアプリとして表現したいと考え、
-本アプリを制作しました。
+* System dependencies
 
-## 使用技術（予定）
-- Ruby on Rails
-- Docker
-- HTML / CSS
-- JavaScript
-- GitHub
+* Configuration
 
-## 主な機能（予定）
-- ユーザー登録・ログイン機能
-- 1日1回のみ引ける運勢ガチャ
-- 運勢結果の表示（コメント付き）
-- レア度による結果演出
-- 過去の運勢履歴の閲覧
+* Database creation
 
-## 今後の拡張予定
-- キャラクター表示
-- 演出の強化
-- SNSシェア機能
+* Database initialization
 
+* How to run the test suite
+
+* Services (job queues, cache servers, search engines, etc.)
+
+* Deployment instructions
+
+* ...
