@@ -7,3 +7,9 @@
 #   ["Action", "Comedy", "Drama", "Horror"].each do |genre_name|
 #     MovieGenre.find_or_create_by!(name: genre_name)
 #   end
+Fortune.create!([
+    { name: "大吉", rarity: "normal", message: "今日は何をやっても上手くいきそうです!" },
+    { name: "吉", rarity: "normal", message: "落ち着いて行動すれば良い結果となります。" },
+    { name: "凶", rarity: "normal", message: "無理は禁物(;'∀')。早めに休んで！" },
+    { name: "レア吉", rarity: "super_rare", message: "今日はあなたが主役の日です！" }
+])

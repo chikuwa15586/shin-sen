@@ -1,4 +1,15 @@
 <h1>今日の神籤</h1>
-<p>まだ結果は出ていません</p>
+
+<h2><%= @fortune.name %></h2>
+
+<p>
+  <%= @fortune.message %>
+</p>
+
+<% if @fortune.rarity == "super_rare" %>
+  <p style="color: red; font-weight: bold;">
+    🌟 SUPER RARE 🌟
+  </p>
+<% end %>
 
 <%= link_to "トップへ戻る", root_path %>
