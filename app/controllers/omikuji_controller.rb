@@ -1,15 +1,19 @@
 class OmikujiController < ApplicationController
+  before_action :authenticate_user!
+  
   def show
-    today = Date.current.to_s
+    today = Date.current.to_s # YYYY-MM-DD形式保存
 
-    if session[:last_draw_date] == today
-      # すでに引いている場合
-      @fortune = Fortune.find(session[:fortune_id])
+    draw_result = current_user.draw_results.find_by(drawn_on: today)  # 今日引いた結果を検索
+
+    if draw_result
+      @fortune = draw_result.fortune  # すでに引いていた場合結果を表示
     else
-      # まだ引いていない場合
-      @fortune = Fortune.order("RANDOM()").first
-      session[:last_draw_date] = today
-      session[:fortune_id] = @fortune.id
+      @fortune = Fortune.order("RANDOM()").first # ランダムにおみくじを引く
+      current_user.draw_results.create!(     
+        fortune: @fortune,
+        drawn_on: today
+      )
     end
   end
 end

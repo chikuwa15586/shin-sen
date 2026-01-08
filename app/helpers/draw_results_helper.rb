@@ -1,0 +1,2 @@
+module DrawResultsHelper
+end

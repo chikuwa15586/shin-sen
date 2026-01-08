@@ -10,7 +10,17 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[8.1].define(version: 2026_01_08_084622) do
+ActiveRecord::Schema[8.1].define(version: 2026_01_08_140229) do
+  create_table "draw_results", force: :cascade do |t|
+    t.datetime "created_at", null: false
+    t.date "drawn_on"
+    t.integer "fortune_id", null: false
+    t.datetime "updated_at", null: false
+    t.integer "user_id", null: false
+    t.index ["fortune_id"], name: "index_draw_results_on_fortune_id"
+    t.index ["user_id"], name: "index_draw_results_on_user_id"
+  end
+
   create_table "fortunes", force: :cascade do |t|
     t.datetime "created_at", null: false
     t.text "message"
@@ -30,4 +40,7 @@ ActiveRecord::Schema[8.1].define(version: 2026_01_08_084622) do
     t.index ["email"], name: "index_users_on_email", unique: true
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
   end
+
+  add_foreign_key "draw_results", "fortunes"
+  add_foreign_key "draw_results", "users"
 end

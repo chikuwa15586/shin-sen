@@ -1,0 +1,19 @@
+<h1>神籤履歴</h1>
+
+<% if @draw_results.any? %>
+  <ul>
+    <% @draw_results.each do |result| %>
+      <li>
+        <strong><%= result.drawn_on %></strong>
+        :<%= result.fortune.name %>
+        <% if result.fortune.rarity == "super_rare" %>
+          🌟
+        <% end %>
+      </li>
+    <% end %>
+  </ul>
+<% else %>
+  <p>まだ神籤を引いていません。</p>
+<% end %>
+
+<%= link_to "トップへ戻る", root_path %>
