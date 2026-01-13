@@ -15,5 +15,7 @@ class OmikujiController < ApplicationController
         drawn_on: today
       )
     end
+
+    @is_super_rare = (@fortune&.rarity == "super_rare")  # ボッチ演算子（&.)によるnilガード
   end
 end

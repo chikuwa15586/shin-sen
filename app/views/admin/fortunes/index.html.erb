@@ -1,0 +1,13 @@
+<h1>神籤管理</h1>
+
+<%= link_to "新規作成", new_admin_fortune_path %>
+
+<ul>
+  <% @fortunes.each do |fortune| %>
+    <li>
+      <%= fortune.name %> (<%= fortune.rarity %>)
+      <%= link_to "編集", edit_admin_fortune_path(fortune) %>
+      <%= button_to "削除", admin_fortune_path(fortune), method: :delete %>
+    </li>
+  <% end %>
+</ul>

@@ -1,19 +1,19 @@
-<h1>今日の神籤</h1>
+<div class="fortune-result <%= 'super-rare' if @is_super_rare %>">
+  <h1>今日の神籤</h1>
 
-<h2><%= @fortune.name %></h2>
+  <h2><%= @fortune.name %></h2>
 
-<p>
-  <%= @fortune.message %>
-</p>
-
-<p>
-  ※ 神籤は１日１回までです。明日また引いてくださいね。
-</p>
-
-<% if @fortune.rarity == "super_rare" %>
-  <p style="color: red; font-weight: bold;">
-    🌟 SUPER RARE 🌟
+  <p>
+    <%= @fortune.message %>
   </p>
-<% end %>
+
+  <% if @is_super_rare %>
+    <p class="rare-text">🌟 SUPER RARE 🌟</p>
+  <% end %>
+</div>
 
 <%= link_to "トップへ戻る", root_path %>
+
+  <p>
+  ※ 神籤は１日１回までです。明日また引いてくださいね。
+  </p>
